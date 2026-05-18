@@ -195,6 +195,8 @@ class Image implements Canvas implements Resource {
 				return 5; // Target8BitRed
 			case A16:
 				return 6; // Target16BitRedFloat
+			case RGBA64U:
+				return 7; // Target64BitInteger
 			default:
 				return 0;
 		}

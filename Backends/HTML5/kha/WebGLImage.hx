@@ -603,6 +603,14 @@ class WebGLImage extends Image {
 					SystemImpl.halfFloat.HALF_FLOAT_OES, cast(mipmaps[i], WebGLImage).image);
 			}
 		}
+		else if (myFormat == TextureFormat.RGBA64U) {
+			SystemImpl.gl.pixelStorei(GL.UNPACK_ALIGNMENT, 2);
+			for (i in 0...mipmaps.length) {
+				SystemImpl.gl.texImage2D(GL.TEXTURE_2D, i + 1, GL_RGBA16UI, mipmaps[i].width, mipmaps[i].height, 0, GL_RGBA_INTEGER, GL.UNSIGNED_SHORT,
+					cast(mipmaps[i], WebGLImage).image);
+			}
+			SystemImpl.gl.pixelStorei(GL.UNPACK_ALIGNMENT, 4);
+		}
 		else {
 			for (i in 0...mipmaps.length) {
 				SystemImpl.gl.texImage2D(GL.TEXTURE_2D, i + 1, GL.RGBA, GL.RGBA, GL.UNSIGNED_BYTE, cast(mipmaps[i], WebGLImage).image);
