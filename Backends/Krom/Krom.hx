@@ -135,7 +135,6 @@ extern class Krom {
 	static function getArg(index: Int): String;
 	static function getFilesLocation(): String;
 	static function listDirectories(path: String): Array<String>;
-	static function listDrives(): Array<String>;
 	static function listFiles(path: String): Array<String>;
 
 	static function setBoolCompute(location: kha.compute.ConstantLocation, value: Bool): Void;
