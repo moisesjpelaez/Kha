@@ -269,6 +269,8 @@ class WebGLImage extends Image {
 							untyped SystemImpl.gl.RGBA16F;
 						case RGBA32:
 							untyped SystemImpl.gl.RGBA8;
+						case RGBA64U:
+							GL_RGBA16UI;
 						case A32:
 							GL_R32F;
 						case A16:
